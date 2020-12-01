@@ -32,5 +32,6 @@
 		}
 	],
 
+	// This makes a (harmles??) error in the console. What should this be for the CMP scripts??
 	"content_security_policy": "img-src * data: blob: 'unsafe-inline'"
  }

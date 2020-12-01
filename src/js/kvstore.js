@@ -3,9 +3,6 @@ const kvstore = {};
 window.kvstore = kvstore;
 
 const DEFAULTS = {
-	// TODO: Reset to test for production
-	tabUrl: "https://testmy.good-loop.com/newtab.html",
-	serverType: "test",
 	cmp: true
 };
 
@@ -51,3 +48,4 @@ kvstore.setupDefaults = () => {
 };
 
 kvstore.setupDefaults();
+export default kvstore;
