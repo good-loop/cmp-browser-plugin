@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+ 
+	"name": "Good-Loop: CMP",
+	"description": "It's called 'consent' - Shouldn't you be in control of it?",
+	"version": "0.1.0",
+
+	"icons": {
+		"64": "img/logo.64.png"
+	},
+ 
+	"web_accessible_resources": ["build/js/inject-bundle-debug.js"],
+
+	"chrome_url_overrides" : {
+	},
+
+	"optional_permissions": [
+	  "storage"
+	],
+
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	},
+
+	"content_scripts": [		
+		{			
+			"matches": ["<all_urls>"],
+			"exclude_matches": ["*://as.good-loop.com/*","*://my.good-loop.com/*","*://good-loop.com/*"],
+			"js": ["build/js/contentscript-bundle-debug.js"]
+		}
+	],
+
+	"content_security_policy": "img-src * data: blob: 'unsafe-inline'"
+ }
