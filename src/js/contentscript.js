@@ -23,6 +23,26 @@ function injectScript(func) {
 	script.remove();
 };
 
+// return TCData in the form of json
+function buildTCData() {
+};
+
+// return pingReturn in the form of a json
+function buildPingReturn() {
+	let pingReturn = {
+		"gdprApplies": true,
+		"cmpLoaded": false,
+		"cmpStatus": "",
+		"displayStatus": "",
+		"apiVersion": "",
+		"cmpVersion": 0, 
+		"cmpId": 0,
+		"gvlVersion": 0,
+		"tcfPolicyVersion": 0
+	}
+	return pingReturn;
+}
+
 // TODO CMP functions (as seen on a fandom.com page)
 // getConsentData undefined callback
 // ping 2 callback
