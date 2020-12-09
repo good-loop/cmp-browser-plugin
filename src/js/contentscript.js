@@ -27,6 +27,8 @@ function injectScript(func) {
 // getConsentData undefined callback
 // ping 2 callback
 // getTCData 2 callback [91]
+// addEventListener 2 callback
+// removeEventListener 2 callback
 
 if ( ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
@@ -36,6 +38,22 @@ if ( ! kvstore.get("cmp")) {
 		console.log("HELLO FROM THE PAGE :)", window, document);
 		let fn = function (...args) {
 			console.warn("My CMP", args);
+			switch (args[0]) { // get the command
+				case ('getTCData'): 
+					console.log("Returning TCData");
+					// TODO: implement TCData
+					break;
+				case ('ping'): 
+					console.log("Returning pingReturn");
+					// TODO: implement pingReturn
+					break;
+				case ('addEventListener'):
+					break;
+				case ('removeEventListerner'):
+					break;
+				default:
+					console.log("This command is not supported");
+			}
 		};
 
 		Object.defineProperty(window, "__tcfapi",
