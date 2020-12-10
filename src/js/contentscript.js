@@ -1,11 +1,12 @@
 
 import $ from 'jquery';
+import * as cmpstub from '@iabtcf/stub';
+import {CmpApi} from '@iabtcf/cmpapi';
 import {addScript} from './base/utils/miscutils';
 // load the kvstore options manager
 import kvstore from './kvstore';
 
 // import _ from 'lodash';
-
 const LOGTAG = "GL-extension";
 
 console.log(LOGTAG, "Hello :)", window, document);
@@ -22,26 +23,6 @@ function injectScript(func) {
 	(document.head||document.documentElement).appendChild(script);
 	script.remove();
 };
-
-// return TCData in the form of json
-function buildTCData() {
-};
-
-// return pingReturn in the form of a json
-function buildPingReturn() {
-	let pingReturn = {
-		"gdprApplies": true,
-		"cmpLoaded": false,
-		"cmpStatus": "",
-		"displayStatus": "",
-		"apiVersion": "",
-		"cmpVersion": 0, 
-		"cmpId": 0,
-		"gvlVersion": 0,
-		"tcfPolicyVersion": 0
-	}
-	return pingReturn;
-}
 
 // TODO CMP functions (as seen on a fandom.com page)
 // getConsentData undefined callback
@@ -75,7 +56,7 @@ if ( ! kvstore.get("cmp")) {
 					console.log("This command is not supported");
 			}
 		};
-
+		
 		Object.defineProperty(window, "__tcfapi",
 			{
 				value: fn,
