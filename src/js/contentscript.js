@@ -79,7 +79,8 @@ if ( ! kvstore.get("cmp")) {
 	});
 }
 
-// this didn't work
-// TODO: add "script.js" to web_accessible_resources in manifest.json
-// let uInject = chrome.runtime.getURL('inject.js');
-// addScript(uInject, {}); gives bundle-debug.js:39036 GET chrome-extension://nnfmfpopejpaniphkkmaeegcpnmmmhlh/inject.js net::ERR_FILE_NOT_FOUND
+// inject.js being injected as an extension
+var script = document.createElement('script'); 
+script.src = chrome.runtime.getURL('build/js/inject-bundle-debug.js');
+(document.head||document.documentElement).appendChild(script);
+script.remove();
