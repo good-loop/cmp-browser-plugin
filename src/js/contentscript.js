@@ -1,7 +1,7 @@
 
 import $ from 'jquery';
-import * as cmpstub from '@iabtcf/stub';
-import {CmpApi} from '@iabtcf/cmpapi';
+//import * as cmpstub from '@iabtcf/stub';
+//import {CmpApi} from '@iabtcf/cmpapi';
 import {addScript} from './base/utils/miscutils';
 // load the kvstore options manager
 import kvstore from './kvstore';
@@ -24,6 +24,14 @@ function injectScript(func) {
 	script.remove();
 };
 
+function injectTcfApi() {
+	// inject.js being injected as an extension
+	let script = document.createElement('script'); 
+	script.src = chrome.runtime.getURL('build/js/inject-bundle-debug.js');
+	(document.head||document.documentElement).appendChild(script);
+	script.remove();
+}
+
 // TODO CMP functions (as seen on a fandom.com page)
 // getConsentData undefined callback
 // ping 2 callback
@@ -35,26 +43,12 @@ if ( ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
 } else {
 	// Setup My CMP
+	injectTcfApi();
+	/*
 	injectScript(function() {
 		console.log("HELLO FROM THE PAGE :)", window, document);
 		let fn = function (...args) {
 			console.warn("My CMP", args);
-			switch (args[0]) { // get the command
-				case ('getTCData'): 
-					console.log("Returning TCData");
-					// TODO: implement TCData
-					break;
-				case ('ping'): 
-					console.log("Returning pingReturn");
-					// TODO: implement pingReturn
-					break;
-				case ('addEventListener'):
-					break;
-				case ('removeEventListerner'):
-					break;
-				default:
-					console.log("This command is not supported");
-			}
 		};
 		
 		Object.defineProperty(window, "__tcfapi",
@@ -77,10 +71,5 @@ if ( ! kvstore.get("cmp")) {
 
 		console.warn("Good-Loop CMP set: window.__cmp", window.__cmp, window.__tcfapi);
 	});
+	*/
 }
-
-// inject.js being injected as an extension
-var script = document.createElement('script'); 
-script.src = chrome.runtime.getURL('build/js/inject-bundle-debug.js');
-(document.head||document.documentElement).appendChild(script);
-script.remove();
