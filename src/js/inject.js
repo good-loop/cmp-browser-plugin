@@ -14,7 +14,7 @@ console.log("HELLO FROM inject.js", document);
 cmpstub();
 //constructor input arguments: cmpID, cmpVersion, serviceSpecific
 const cmpApi = new CmpApi(141, 4, true);
-cmpApi.update('');
+cmpApi.update('', true);
 
 // set up GVL vendor list
 const gvl = new GVL(gvljson);
@@ -28,3 +28,5 @@ const encodedString = TCString.encode(tcModel);
 
 console.log(encodedString); // TC string encoded begins with 'C'
 cmpApi.update(encodedString, false);
+
+// TODO: __tcfapi in some websites are not overridden, consent popup is still there
