@@ -15,7 +15,7 @@ cmpstub();
 console.log(window.__tcfapi);
 //constructor input arguments: cmpID, cmpVersion, serviceSpecific
 const cmpApi = new CmpApi(141, 4, true);
-cmpApi.update('', true);
+//cmpApi.update('', true);
 
 // set up GVL vendor list
 const gvl = new GVL(gvljson);
