@@ -1,5 +1,5 @@
 /**
- * TODO This code gets injected into the web page.
+ * This code initialise __tcfapi on websites with default rejection
  */
 import * as cmpstub from './stub.js';
 //import * as cmpstub from '@iabtcf/stub';
@@ -12,10 +12,8 @@ console.log("HELLO FROM inject.js", document);
 
 // set up __tcfpi stub
 cmpstub();
-console.log(window.__tcfapi);
 //constructor input arguments: cmpID, cmpVersion, serviceSpecific
 const cmpApi = new CmpApi(141, 4, true);
-//cmpApi.update('', true);
 
 // set up GVL vendor list
 const gvl = new GVL(gvljson);
@@ -25,6 +23,15 @@ const tcModel = new TCModel(gvl);
 tcModel.cmpId = 141;
 tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
+
+/*
+// TODO: set tcModel based on user's preferences
+chrome.storage.local.get(['marketing'], function(result) {
+  console.log('Marketing consent: ' + result.key);
+});
+// *********************************************
+*/
+
 const encodedString = TCString.encode(tcModel);
 
 console.log(encodedString); // TC string encoded begins with 'C'
