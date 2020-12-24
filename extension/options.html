@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
-        margin: 10px;
-      }
-    </style>
   </head>
   <body>
-    <div id="buttonDiv">
-    </div>
-    <div>
-      <p>Choose your preferred consent setting!</p>
-    </div>
+	<div>
+	  <p>Choose your preferred consent settings!</p>
+	</div>
+    <label>
+	  <input type="checkbox" id="marketing">
+	  Consent for Marketing Cookies
+	</label>
+	<div id="status"></div>
+	<button id="save">Save</button>
   </body>
-  <script src="options.js"></script>
+  <script src="build/js/options-bundle-debug.js"></script>
 </html>
