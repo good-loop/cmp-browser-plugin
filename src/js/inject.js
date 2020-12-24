@@ -24,13 +24,13 @@ tcModel.cmpId = 141;
 tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
 
-/*
 // TODO: set tcModel based on user's preferences
-chrome.storage.local.get(['marketing'], function(result) {
+//var marketingConsent = window.localStorage.getItem('marketing');
+//console.log('Marketing consent: ', marketingConsent);
+chrome.storage.sync.get(['marketing'], function(result) {
   console.log('Marketing consent: ' + result.key);
 });
 // *********************************************
-*/
 
 const encodedString = TCString.encode(tcModel);
 
