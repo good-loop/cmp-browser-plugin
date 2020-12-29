@@ -14,14 +14,12 @@
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.15",
     "md5": "^2.2.1",
-    "promise-value": "^1.2.8",
+    "promise-value": "^1.2.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scroll": "^1.7.12",
     "react-spring": "^8.0.27",
     "reactstrap": "^8.4.1",
-    "sjtest": "^0.4.9",
-    "you-again": "^0.8.8"
+    "sjtest": "^0.4.9"
   },
   "scripts": {
     "compile": "webpack --config $PWD/webpack.config.js --progress --colors",
