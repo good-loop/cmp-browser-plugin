@@ -25,10 +25,18 @@ tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
 
 // TODO: set tcModel based on user's preferences
-//var marketingConsent = window.localStorage.getItem('marketing');
-//console.log('Marketing consent: ', marketingConsent);
-chrome.storage.sync.get(['marketing'], function(result) {
-  console.log('Marketing consent: ' + result.key);
+/*chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.marketing == true) {
+      console.log("We will set the marketing consent as true");
+      sendResponse({accepted: true});
+    }
+  }
+);*/
+document.dispatchEvent(new CustomEvent('preferences', { detail: {message:"I need data"} }));
+document.addEventListener('preferences2', function (e) {
+  var data = e.detail;
+  console.log('received: ', data);
 });
 // *********************************************
 

@@ -43,7 +43,21 @@ if ( ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
 } else {
 	// Setup My CMP
+	var marketingConsent;
+	chrome.storage.sync.get(['marketing'], function(result) {
+	  marketingConsent = result.marketing;
+	  console.log('Marketing consent: ' + result.marketing);
+	});
 	injectTcfApi();
+	document.addEventListener('preferences', function (e) {
+		var data = e.detail;
+		console.log('received: ', data);
+	});
+	document.dispatchEvent(new CustomEvent('preferences2', { detail: {message:"I have data"} }));
+	/*chrome.runtime.sendMessage({marketing: marketingConsent}, function(response) {
+	  console.log(response);
+	});*/
+	//window.postMessage({detail:{marketing:marketingConsent}}, '*');
 	/*
 	injectScript(function() {
 		console.log("HELLO FROM THE PAGE :)", window, document);
