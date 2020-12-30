@@ -14,7 +14,6 @@ function save_options() {
 
 function get_options() {
     chrome.storage.sync.get(['marketing'], function(result) {
-      console.log(result);
 	    var marketingConsent = result.marketing;
       var settings = document.getElementById('settings');
       settings.textContent = 'Marketing consent: ' + marketingConsent;
