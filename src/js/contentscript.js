@@ -53,10 +53,12 @@ if ( ! kvstore.get("cmp")) {
 		var data = e.detail;
 		console.log('received: ', data);
 	});
-	document.dispatchEvent(new CustomEvent('preferences2', { detail: {message:"I have data"} }));
-	/*chrome.runtime.sendMessage({marketing: marketingConsent}, function(response) {
-	  console.log(response);
-	});*/
+
+	chrome.runtime.onMessage.addListener(
+		function(request, sender, sendResponse) {
+		  if (request.message)
+			console.log("Received at content script: " + request.message);
+		});
 	//window.postMessage({detail:{marketing:marketingConsent}}, '*');
 	/*
 	injectScript(function() {

@@ -27,6 +27,10 @@
 		"open_in_tab": false
 	},
 
+	"externally_connectable": {
+		"matches": ["<all_urls>"]
+	},
+
 	"content_scripts": [		
 		{			
 			"matches": ["<all_urls>"],
