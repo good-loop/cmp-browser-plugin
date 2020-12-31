@@ -30,7 +30,7 @@ document.dispatchEvent(new CustomEvent('preferences', { detail: {message:"I need
 var extensionId = "gpgihgkjcdkilmibcpffonlglmkmiehh";
 chrome.runtime.sendMessage(extensionId, {message: "I also need data"},
   function(response) {
-    console.log(response);
+    console.log("Collecting response from extension: " + response.marketing);
 });
 // *********************************************
 
