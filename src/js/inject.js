@@ -25,7 +25,7 @@ tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
 
 // TODO: set tcModel based on user's preferences
-document.dispatchEvent(new CustomEvent('preferences', { detail: {message:"I need data"} }));
+//document.dispatchEvent(new CustomEvent('preferences', { detail: {message:"I need data"} }));
 
 var extensionId = "gpgihgkjcdkilmibcpffonlglmkmiehh";
 chrome.runtime.sendMessage(extensionId, {message: "I also need data"},

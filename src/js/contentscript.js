@@ -44,10 +44,12 @@ if ( ! kvstore.get("cmp")) {
 } else {
 	// Setup My CMP
 	injectTcfApi();
+
+	/*
 	document.addEventListener('preferences', function (e) {
 		var data = e.detail;
 		console.log('received: ', data);
-	});
+	});*/
 
 	//window.postMessage({detail:{marketing:marketingConsent}}, '*');
 	/*
