@@ -41,6 +41,19 @@ chrome.runtime.sendMessage(extensionId, {message: "I also need data"},
 });*/
 // *********************************************
 
+// purpose IDs and their meanings **************
+// 1: Store information on device
+// 2: Show basic ads
+// 3: Build personalised ads profile
+// 4: Show personalised ads
+// 5: Build personalised content profile
+// 6: Show personalised content
+// 7: Measure ad performance
+// 8: Measure content performance
+// 9: Apply market research
+//10: Improve products
+// *********************************************
+
 const encodedString = TCString.encode(tcModel);
 
 console.log(encodedString); // TC string encoded begins with 'C'
