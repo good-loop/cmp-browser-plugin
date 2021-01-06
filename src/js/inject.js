@@ -26,6 +26,10 @@ tcModel.isServiceSpecific = true;
 
 // TODO: set tcModel based on user's preferences
 //document.dispatchEvent(new CustomEvent('preferences', { detail: {message:"I need data"} }));
+window.postMessage({message:"setting up connection"}, '*');
+window.addEventListener("message", function(event) {
+  if (event.data.message) {console.log(event.data.message)};
+}, false);
 
 var extensionId = "gpgihgkjcdkilmibcpffonlglmkmiehh";
 chrome.runtime.sendMessage(extensionId, {message: "I also need data"},

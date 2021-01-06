@@ -52,6 +52,13 @@ if ( ! kvstore.get("cmp")) {
 	});*/
 
 	//window.postMessage({detail:{marketing:marketingConsent}}, '*');
+	//window.postMessage({message:"setting up connection"}, '*');
+	
+	window.addEventListener("message", function(event) {
+		if (event.data.message == "setting up connection") {
+			window.postMessage({message: "connection successful"}, "*");
+		}
+	}, false);
 	/*
 	injectScript(function() {
 		console.log("HELLO FROM THE PAGE :)", window, document);
