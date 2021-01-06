@@ -42,7 +42,7 @@ if ( ! kvstore.get("cmp")) {
 			{
 				value: fn,
 				writable: false,
-				enumerable: false,
+				// enumerable: false,
 				configurable: false
 			}
 		);
@@ -51,7 +51,7 @@ if ( ! kvstore.get("cmp")) {
 			{
 				value: fn,
 				writable: false,
-				enumerable: false,
+				// enumerable: false,
 				configurable: false
 			}
 		);
