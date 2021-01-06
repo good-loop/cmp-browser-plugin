@@ -45,16 +45,16 @@ if ( ! kvstore.get("cmp")) {
 	// Setup My CMP
 	injectTcfApi();
 
-	var marketingConsent;
-    chrome.storage.sync.get(['marketing'], function(result) {
-        marketingConsent = result.marketing;
-        console.log('Marketing consent: ' + result.marketing);
+	var consent1;
+    chrome.storage.sync.get(['purpose1'], function(result) {
+        consent1 = result.purpose1;
+        console.log('Storage consent: ' + result.purpose1);
     });
 	
 	window.addEventListener("message", function(event) {
 		if (event.data.connection_setup) {
 			console.log("setting up connection");
-			window.postMessage({connection_response:true, marketing:marketingConsent}, "*");
+			window.postMessage({connection_response:true, purpose1:consent1}, "*");
 		}
 	}, false);
 	/*

@@ -30,7 +30,7 @@ window.postMessage({connection_setup:true}, '*');
 window.addEventListener("message", function(event) {
   if (event.data.connection_response) {
     console.log("connection successful!");
-    console.log(event.data.marketing);
+    console.log(event.data.purpose1);
   };
 }, false);
 /*
