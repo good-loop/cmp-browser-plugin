@@ -18,18 +18,9 @@
 	  "storage"
 	],
 
-	"optional_permissions": [
-	  "storage"
-	],
-
 	"options_ui": {
 		"page": "options.html",
 		"open_in_tab": false
-	},
-
-	"externally_connectable": {
-		"ids": ["*"],
-		"matches": ["<all_urls>"]
 	},
 
 	"content_scripts": [		
