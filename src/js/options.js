@@ -31,10 +31,20 @@ function save_options() {
 }
 
 function get_options() {
-    chrome.storage.sync.get(['purpose1'], function(result) {
-	    var consent1 = result.purpose1;
+    chrome.storage.sync.get(['purpose1', 'purpose2', 'purpose3', 'purpose4',
+    'purpose5', 'purpose6', 'purpose7', 'purpose8', 'purpose9', 'purpose10'], function(result) {
       var settings = document.getElementById('settings');
-      settings.textContent = 'Storage consent: ' + consent1;
+      settings.setAttribute('style', 'white-space: pre;');
+      settings.textContent = "Storage on device consent: " + result.purpose1 + "\r\n";
+      settings.textContent += "Show basic ads consent: " + result.purpose2 + "\r\n";
+      settings.textContent += "Personalised ads profile consent: " + result.purpose3 + "\r\n";
+      settings.textContent += "Show personalised ads consent: " + result.purpose4 + "\r\n";
+      settings.textContent += "Personalised content profile consent: " + result.purpose5 + "\r\n";
+      settings.textContent += "Show personalised content consent: " + result.purpose6 + "\r\n";
+      settings.textContent += "Measure ad performance consent: " + result.purpose7 + "\r\n";
+      settings.textContent += "Measure content performance consent: " + result.purpose8 + "\r\n";
+      settings.textContent += "Apply market research consent: " + result.purpose9 + "\r\n";
+      settings.textContent += "Use of data to improve products consent: " + result.purpose10 + "\r\n";
 	  });
 }
 
