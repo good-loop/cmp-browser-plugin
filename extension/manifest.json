@@ -8,11 +8,6 @@
 	"icons": {
 		"64": "img/logo.64.png"
 	},
-
-	"background": {
-		"scripts": ["background.js"],
-		"persistent": false
-	},
  
 	"web_accessible_resources": ["build/js/inject-bundle-debug.js"],
 
