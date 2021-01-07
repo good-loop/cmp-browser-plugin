@@ -24,13 +24,25 @@ tcModel.cmpId = 141;
 tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
 
+const encodedString = TCString.encode(tcModel);
+
+console.log(encodedString); // TC string encoded begins with 'C'
+cmpApi.update(encodedString, false);
+
+// TODO: __tcfapi in some websites are not overridden, consent popup is still there
 // TODO: set tcModel based on user's preferences
 // MESSAGING CHANNEL ****************************
 window.postMessage({connection_setup:true}, '*');
 window.addEventListener("message", function(event) {
   if (event.data.connection_response) {
     console.log("connection successful!");
-    console.log(event.data.purpose1);
+    var i;
+    for (i=0; i<10; i++) {
+      if (event.data.purposes[i]) tcModel.vendorConsents.set(i+1);
+    }
+    const newEncodedString = TCString.encode(tcModel);
+    console.log(newEncodedString);
+    cmpApi.update(newEncodedString, false);
   };
 }, false);
 /*
@@ -53,10 +65,3 @@ chrome.runtime.sendMessage(extensionId, {message: "I also need data"},
 // 9: Apply market research
 //10: Improve products
 // *********************************************
-
-const encodedString = TCString.encode(tcModel);
-
-console.log(encodedString); // TC string encoded begins with 'C'
-cmpApi.update(encodedString, false);
-
-// TODO: __tcfapi in some websites are not overridden, consent popup is still there

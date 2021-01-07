@@ -45,16 +45,27 @@ if ( ! kvstore.get("cmp")) {
 	// Setup My CMP
 	injectTcfApi();
 
-	var consent1;
-    chrome.storage.sync.get(['purpose1'], function(result) {
-        consent1 = result.purpose1;
-        console.log('Storage consent: ' + result.purpose1);
+	var consent1, consent2, consent3, consent4, consent5, consent6, consent7, consent8, consent9, consent10;
+    chrome.storage.sync.get(['purpose1', 'purpose2', 'purpose3', 'purpose4',
+    'purpose5', 'purpose6', 'purpose7', 'purpose8', 'purpose9', 'purpose10'], function(result) {
+		consent1 = result.purpose1;
+		consent2 = result.purpose2;
+		consent3 = result.purpose3;
+		consent4 = result.purpose4;
+		consent5 = result.purpose5;
+		consent6 = result.purpose6;
+		consent7 = result.purpose7;
+		consent8 = result.purpose8;
+		consent9 = result.purpose9;
+		consent10 = result.purpose10;
     });
 	
 	window.addEventListener("message", function(event) {
 		if (event.data.connection_setup) {
 			console.log("setting up connection");
-			window.postMessage({connection_response:true, purpose1:consent1}, "*");
+			window.postMessage({connection_response:true, 
+				purposes:[consent1,consent2,consent3,consent4,consent5,
+					consent6,consent7,consent8,consent9,consent10]}, "*");
 		}
 	}, false);
 	/*
