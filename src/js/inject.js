@@ -38,7 +38,7 @@ window.addEventListener("message", function(event) {
     console.log("connection successful!");
     var i;
     for (i=0; i<10; i++) {
-      if (event.data.purposes[i]) tcModel.vendorConsents.set(i+1);
+      if (event.data.purposes[i]) tcModel.purposeConsents.set(i+1);
     }
     const newEncodedString = TCString.encode(tcModel);
     console.log(newEncodedString);
