@@ -48,7 +48,6 @@ if ( ! kvstore.get("cmp")) {
 	var consents;
     chrome.storage.sync.get(['purposes'], function(result) {
 		consents = result.purposes;
-		console.log(consents);
     });
 	
 	window.addEventListener("message", function(event) {
