@@ -10,16 +10,8 @@ function save_options() {
     var purposeConsent9 = document.getElementById('purpose9').checked;
     var purposeConsent10 = document.getElementById('purpose10').checked;
     chrome.storage.sync.set({
-      purpose1: purposeConsent1,
-      purpose2: purposeConsent2,
-      purpose3: purposeConsent3,
-      purpose4: purposeConsent4,
-      purpose5: purposeConsent5,
-      purpose6: purposeConsent6,
-      purpose7: purposeConsent7,
-      purpose8: purposeConsent8,
-      purpose9: purposeConsent9,
-      purpose10: purposeConsent10
+      purposes: [purposeConsent1,purposeConsent2,purposeConsent3,purposeConsent4,purposeConsent5,
+        purposeConsent6,purposeConsent7,purposeConsent8,purposeConsent9,purposeConsent10]
     }, function() {
       // Update status to let user know options were saved.
       var status = document.getElementById('status');
@@ -31,20 +23,19 @@ function save_options() {
 }
 
 function get_options() {
-    chrome.storage.sync.get(['purpose1', 'purpose2', 'purpose3', 'purpose4',
-    'purpose5', 'purpose6', 'purpose7', 'purpose8', 'purpose9', 'purpose10'], function(result) {
+    chrome.storage.sync.get(['purposes'], function(result) {
       var settings = document.getElementById('settings');
       settings.setAttribute('style', 'white-space: pre;');
-      settings.textContent = "Storage on device consent: " + result.purpose1 + "\r\n";
-      settings.textContent += "Show basic ads consent: " + result.purpose2 + "\r\n";
-      settings.textContent += "Personalised ads profile consent: " + result.purpose3 + "\r\n";
-      settings.textContent += "Show personalised ads consent: " + result.purpose4 + "\r\n";
-      settings.textContent += "Personalised content profile consent: " + result.purpose5 + "\r\n";
-      settings.textContent += "Show personalised content consent: " + result.purpose6 + "\r\n";
-      settings.textContent += "Measure ad performance consent: " + result.purpose7 + "\r\n";
-      settings.textContent += "Measure content performance consent: " + result.purpose8 + "\r\n";
-      settings.textContent += "Apply market research consent: " + result.purpose9 + "\r\n";
-      settings.textContent += "Use of data to improve products consent: " + result.purpose10 + "\r\n";
+      settings.textContent = "Storage on device consent: " + result.purposes[0] + "\r\n";
+      settings.textContent += "Show basic ads consent: " + result.purposes[1] + "\r\n";
+      settings.textContent += "Personalised ads profile consent: " + result.purposes[2] + "\r\n";
+      settings.textContent += "Show personalised ads consent: " + result.purposes[3] + "\r\n";
+      settings.textContent += "Personalised content profile consent: " + result.purposes[4] + "\r\n";
+      settings.textContent += "Show personalised content consent: " + result.purposes[5] + "\r\n";
+      settings.textContent += "Measure ad performance consent: " + result.purposes[6] + "\r\n";
+      settings.textContent += "Measure content performance consent: " + result.purposes[7] + "\r\n";
+      settings.textContent += "Apply market research consent: " + result.purposes[8] + "\r\n";
+      settings.textContent += "Use of data to improve products consent: " + result.purposes[9] + "\r\n";
 	  });
 }
 
