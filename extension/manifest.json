@@ -26,6 +26,7 @@
 	"content_scripts": [		
 		{			
 			"matches": ["<all_urls>"],
+			"run_at": "document_start",
 			"exclude_matches": ["*://as.good-loop.com/*","*://my.good-loop.com/*","*://good-loop.com/*"],
 			"js": ["build/js/contentscript-bundle-debug.js"]
 		}
