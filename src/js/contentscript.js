@@ -1,7 +1,5 @@
 
 import $ from 'jquery';
-//import * as cmpstub from '@iabtcf/stub';
-//import {CmpApi} from '@iabtcf/cmpapi';
 import {TCModel, TCString, GVL} from '@iabtcf/core';
 import {addScript} from './base/utils/miscutils';
 // load the kvstore options manager

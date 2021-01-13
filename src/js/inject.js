@@ -3,7 +3,6 @@
  */
 import * as cmpstub from './lib/stub.js';
 //import * as cmpstub from '@iabtcf/stub';
-import {TCModel, TCString, GVL} from '@iabtcf/core';
 //import {CmpApi} from '@iabtcf/cmpapi';
 import {CmpApi} from './lib/CmpApi.js';
 
