@@ -1,12 +1,13 @@
 /**
  * This code initialise __tcfapi on websites with default rejection
  */
-import * as cmpstub from './stub.js';
+import * as cmpstub from './lib/stub.js';
 //import * as cmpstub from '@iabtcf/stub';
 import {TCModel, TCString, GVL} from '@iabtcf/core';
-import {CmpApi} from '@iabtcf/cmpapi';
+//import {CmpApi} from '@iabtcf/cmpapi';
+import {CmpApi} from './lib/CmpApi.js';
 
-const gvljson = require("./data/vendor-list.json")
+//const gvljson = require("./data/vendor-list.json")
 
 console.log("HELLO FROM inject.js", document);
 
@@ -15,6 +16,7 @@ cmpstub();
 //constructor input arguments: cmpID, cmpVersion, serviceSpecific
 const cmpApi = new CmpApi(141, 4, true);
 
+/*
 // set up GVL vendor list
 const gvl = new GVL(gvljson);
 
