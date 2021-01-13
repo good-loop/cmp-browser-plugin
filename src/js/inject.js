@@ -7,14 +7,25 @@ import {TCModel, TCString, GVL} from '@iabtcf/core';
 //import {CmpApi} from '@iabtcf/cmpapi';
 import {CmpApi} from './lib/CmpApi.js';
 
-//const gvljson = require("./data/vendor-list.json")
+//const gvljson = require("./data/vendor-list.json");
 
 console.log("HELLO FROM inject.js", document);
 
-// set up __tcfpi stub
+// set up __tcfapi stub
 cmpstub();
 //constructor input arguments: cmpID, cmpVersion, serviceSpecific
 const cmpApi = new CmpApi(141, 4, true);
+
+window.postMessage({connection_setup:true}, '*');
+window.addEventListener("message", function(event) {
+  if (event.data.connection_response) {
+    console.log("connection successful!");
+    const newEncodedString = event.data.consentString;
+    console.log("Received: " + newEncodedString);
+    cmpApi.update(newEncodedString, false);
+  };
+}, false);
+
 
 /*
 // set up GVL vendor list
@@ -29,6 +40,7 @@ tcModel.isServiceSpecific = true;
 const encodedString = TCString.encode(tcModel);
 
 console.log(encodedString); // TC string encoded begins with 'C'
+//CO_971SO_971SCNAEAENBECgAAAAAAAAAAAAAAAAAAAA.YAAAAAAAAAAA
 cmpApi.update(encodedString, false);
 
 // TODO: __tcfapi in some websites are not overridden, consent popup is still there

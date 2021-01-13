@@ -2,9 +2,12 @@
 import $ from 'jquery';
 //import * as cmpstub from '@iabtcf/stub';
 //import {CmpApi} from '@iabtcf/cmpapi';
+import {TCModel, TCString, GVL} from '@iabtcf/core';
 import {addScript} from './base/utils/miscutils';
 // load the kvstore options manager
 import kvstore from './kvstore';
+
+const gvljson = require("./data/vendor-list.json");
 
 // import _ from 'lodash';
 const LOGTAG = "GL-extension";
@@ -15,6 +18,16 @@ console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 // // let uOptions = chrome.runtime.getURL('options.html'); doesnt work
 // let uLogo = chrome.extension.getURL('/img/logo.64.png'); //chrome.runtime.getURL('img/logo.64.png');
 // let uLogo2 = chrome.extension.getURL('img/logo.64.png');
+
+// set up GVL vendor list
+const gvl = new GVL(gvljson);
+// create a new TC string
+const tcModel = new TCModel(gvl);
+tcModel.cmpId = 141;
+tcModel.cmpVersion = 4;
+tcModel.isServiceSpecific = true;
+const encodedString = TCString.encode(tcModel);
+console.log("Encoded string in content script: " + encodedString);
 
 function injectScript(func) {
 	let actualCode = '(' + func + ')();';
@@ -42,6 +55,7 @@ function injectTcfApi() {
 if ( ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
 } else {
+
 	// Setup My CMP
 	injectTcfApi();
 
@@ -54,7 +68,7 @@ if ( ! kvstore.get("cmp")) {
 		if (event.data.connection_setup) {
 			console.log("setting up connection");
 			window.postMessage({connection_response:true, 
-				purposes:consents}, "*");
+				purposes:consents, consentString:encodedString}, "*");
 		}
 	}, false);
 	/*
