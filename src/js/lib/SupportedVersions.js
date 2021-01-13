@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var SupportedVersions=function(){function e(){}return e.has=function(e){return"string"==typeof e&&(e=+e),this.set_.has(e)},e.set_=new Set([0,2,void 0,null]),e}();exports.SupportedVersions=SupportedVersions;
