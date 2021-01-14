@@ -4,3 +4,5 @@ fandom, https://diary-of-a-wimpy-kid.fandom.com/wiki/Diary_of_a_Wimpy_Kid:_Wreck
 spotify, https://www.spotify.com/uk/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 14/01/2021
 guardian, https://www.theguardian.com/uk, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 14/01/2021
 scotsman, https://www.scotsman.com/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 14/01/2021
+the sun, https://www.thesun.co.uk/, no, branch:develop, cookie popup, cookie popup, 14/01/2021
+the sun, https://www.thesun.co.uk/, no, branch:master, cookie popup, cookie popup, 14/01/2021
