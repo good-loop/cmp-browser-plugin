@@ -14,6 +14,11 @@
 	"chrome_url_overrides" : {
 	},
 
+	"background": {
+	  	"scripts": ["background.js"],
+		"persistent": false
+	},
+
 	"permissions": [
 	  "storage"
 	],
