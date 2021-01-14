@@ -24,7 +24,7 @@ const tcModel = new TCModel(gvl);
 tcModel.cmpId = 141;
 tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
-const encodedString = TCString.encode(tcModel);
+var encodedString = TCString.encode(tcModel);
 console.log("Encoded string in content script: " + encodedString);
 
 function injectScript(func) {
@@ -56,17 +56,20 @@ if ( ! kvstore.get("cmp")) {
 
 	// Setup My CMP
 	injectTcfApi();
-
-	var consents;
-    chrome.storage.sync.get(['purposes'], function(result) {
-		consents = result.purposes;
-    });
 	
 	window.addEventListener("message", function(event) {
 		if (event.data.connection_setup) {
 			console.log("setting up connection");
-			window.postMessage({connection_response:true, 
-				purposes:consents, consentString:encodedString}, "*");
+			chrome.storage.sync.get(['purposes'], function(result) {
+				var i;
+				for (i=0; i<10; i++) {
+				  if (result.purposes[i]) tcModel.purposeConsents.set(i+1);
+				}
+				encodedString = TCString.encode(tcModel);
+				console.log("Updated consent string: " + encodedString);
+				window.postMessage({connection_response:true, 
+					consentString:encodedString}, "*");
+			});
 		}
 	}, false);
 	/*

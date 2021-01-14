@@ -19,9 +19,9 @@ window.postMessage({connection_setup:true}, '*');
 window.addEventListener("message", function(event) {
   if (event.data.connection_response) {
     console.log("connection successful!");
-    const newEncodedString = event.data.consentString;
-    console.log("Received: " + newEncodedString);
-    cmpApi.update(newEncodedString, false);
+    const encodedString = event.data.consentString;
+    console.log("Received: " + encodedString);
+    cmpApi.update(encodedString, false);
   };
 }, false);
 
