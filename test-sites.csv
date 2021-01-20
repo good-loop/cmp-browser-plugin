@@ -6,3 +6,4 @@ guardian, https://www.theguardian.com/uk, yes, branch:develop, cookie popup, No 
 scotsman, https://www.scotsman.com/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 14/01/2021
 the sun, https://www.thesun.co.uk/, no, branch:develop, cookie popup, cookie popup, 14/01/2021
 the sun, https://www.thesun.co.uk/, no, branch:master, cookie popup, cookie popup, 14/01/2021
+the daily mail , https://www.dailymail.co.uk/home/index.html, yes, branch:develop, cookie popup, cookie popup, 15/01/2021
