@@ -31,3 +31,4 @@ microsoft office, http://www.office.com/, no, branch:develop, cookie popup, cook
 linkedin, http://www.linkedin.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
 indeed, http://www.indeed.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021, OneTrust, custom cookies
 imdb, https://www.imdb.com/, yes, branch:develop, no popup, No popup. CMP connects successfully, 20/01/2021,,
+geeksforgeeks, https://www.geeksforgeeks.org/, yes, branch:develop, cookie popup, One small acknowledgement popup left, 20/01/2021,,
