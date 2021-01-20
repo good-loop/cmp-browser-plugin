@@ -1,4 +1,4 @@
-Site, Url, Success, CMP Plugin Version, Behaviour without CMP Plugin, Behaviour WITH CMP Plugin, Date
+Site, Url, Success, CMP Plugin Version, Behaviour without CMP Plugin, Behaviour WITH CMP Plugin, Date, CMP make, Notes
 fandom, https://diary-of-a-wimpy-kid.fandom.com/wiki/Diary_of_a_Wimpy_Kid:_Wrecking_Ball, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 14/01/2021
 fandom, https://diary-of-a-wimpy-kid.fandom.com/wiki/Diary_of_a_Wimpy_Kid:_Wrecking_Ball, yes, branch:master, cookie popup, No popup. CMP quietly fails to connect, 31/12/2020
 spotify, https://www.spotify.com/uk/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 14/01/2021
@@ -7,3 +7,4 @@ scotsman, https://www.scotsman.com/, yes, branch:develop, cookie popup, No popup
 the sun, https://www.thesun.co.uk/, no, branch:develop, cookie popup, cookie popup, 14/01/2021
 the sun, https://www.thesun.co.uk/, no, branch:master, cookie popup, cookie popup, 14/01/2021
 the daily mail , https://www.dailymail.co.uk/home/index.html, yes, branch:develop, cookie popup, cookie popup, 15/01/2021
+pcmag, https://uk.pcmag.com/, no, develop, cookie popup, cookie popup, 19/01/2021, Evidon, Uses __cmp
