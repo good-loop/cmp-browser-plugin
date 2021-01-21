@@ -1,0 +1,52 @@
+# UK Top 50 sites from Alexa https://www.alexa.com/topsites/countries/GB
+Site, CMP make, Notes
+Google.com,	custom
+Youtube.com,	custom
+Reddit.com,	custom,	only a banner
+Amazon.co.uk
+Google.co.uk,	custom
+Bbc.co.uk,	custom,	only a banner
+Ebay.co.uk
+Wikipedia.org,	no cookies!,	success
+Bongacams.com
+Netflix.com
+Live.com
+Yahoo.com
+Twitch.tv
+Ladbible.com,	quantcast,	success
+Facebook.com
+Microsoftonline.com
+Chaturbate.com
+Livejasmin.com
+Microsoft.com
+Zoom.us
+Www.gov.uk
+Vk.com
+Pornhub.com
+Trustpilot.com
+Theguardian.com,	custom,	success
+Fandom.com
+Imgur.com
+Ok.ru
+Sportbible.com,	quantcast,	success
+Roblox.com
+Dailymail.co.uk
+Xhamster.com
+Imdb.com
+Office.com
+Aparat.com
+Rightmove.co.uk
+Virginmedia.com
+Amazon.com
+Sky.com
+Hotukdeals.com,	custom,	Not GDPR compliant - sets tracking cookies without permission
+Redd.it,	custom,	only a banner
+Bt.com
+Unilad.co.uk,	quantcast,	success
+Gamepedia.com
+Chess.com
+Bing.com
+Duckduckgo.com
+Argos.co.uk
+T.co
+Currys.co.uk
