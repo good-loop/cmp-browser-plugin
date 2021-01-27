@@ -9,6 +9,9 @@ const gvljson = require("./data/vendor-list.json");
 
 const LOGTAG = "GL-extension";
 
+import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';
+injectCosmetics(window, true);
+
 console.log(LOGTAG, "Hello :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
