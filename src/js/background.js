@@ -6,6 +6,7 @@ async function blockCookie() {
         'https://www.fanboy.co.nz/fanboy-cookiemonster.txt'
     ]);
     blocker.enableBlockingInBrowser(browser);
+    console.log("Blocker enabled");
 };
 
 blockCookie();
