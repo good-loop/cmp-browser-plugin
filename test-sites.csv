@@ -24,12 +24,13 @@ yahoo, https://www.yahoo.com/, no, branch:develop, cookie popup, cookie popup, 2
 instagram , https://www.instagram.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
 reddit, https://www.reddit.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
 amp project, http://www.ampproject.org/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,," no cookie options for users, just a popup statement"
-gov uk, https://www.gov.uk/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
-rightmove , http://www.rightmove.co.uk/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
+gov uk, https://www.gov.uk/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 27/01/2021,, manually set cookie
+rightmove , http://www.rightmove.co.uk/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 27/01/2021,, manually set cookie
 paypal, https://www.paypal.com/uk/home, no, branch:develop, cookie popup, cookie popup, 20/01/2021, , custom cookies: “cookie_prefs” 
 microsoft office, http://www.office.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
 linkedin, http://www.linkedin.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021,, custom cookies
 indeed, http://www.indeed.com/, no, branch:develop, cookie popup, cookie popup, 20/01/2021, OneTrust, custom cookies
 imdb, https://www.imdb.com/, yes, branch:develop, no popup, No popup. CMP connects successfully, 20/01/2021,,
 geeksforgeeks, https://www.geeksforgeeks.org/, yes, branch:develop, cookie popup, One small acknowledgement popup left, 20/01/2021,,
-IAB UK, https://www.iabuk.com/events-training/virtual-networking-1, no, branch:develop, cookie popup, cookie popup, 26/01/2021, Civic https://www.civicuk.com/cookie-control
+IAB UK, https://www.iabuk.com/events-training/virtual-networking-1, no, branch:develop, cookie popup, cookie popup, 26/01/2021, Civic https://www.civicuk.com/cookie-control,
+nhs uk, https://www.nhs.uk/, yes, branch:develop, cookie popup, No popup. CMP connects successfully, 27/01/2021,, manually set cookie
