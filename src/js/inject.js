@@ -9,9 +9,13 @@ import {CmpApi} from './lib/CmpApi.js';
 const Cookies = require('js-cookie');
 const cookielist = require('./data/cookie-list.json');
 const cookiesNeeded = cookielist[window.location.host];
-Object.keys(cookiesNeeded).forEach(function(key) {
-  Cookies.set(key, cookiesNeeded[key]);
-})
+try {
+  Object.keys(cookiesNeeded).forEach(function(key) {
+    Cookies.set(key, cookiesNeeded[key]);
+  })
+} catch (error) {
+  console.log("Website not supported");
+}
 
 console.log("HELLO FROM inject.js", document);
 
