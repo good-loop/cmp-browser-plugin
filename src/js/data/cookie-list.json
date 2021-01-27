@@ -17,6 +17,15 @@
             "consented":true,
             "version":3
         }
+    },
+
+    "uk.indeed.com": {
+        "OptanonAlertBoxClosed": "true",
+        "OptanonConsent": "isIABGlobal=false&version=6.6.0&landingPath=NotLandingPage&groups=C0001:1,C0002:0,C0003:0,C0004:0&AwaitingReconsent=false"
+    },
+
+    "www.paypal.com": {
+        "cookie_prefs": "T=0,P=0,F=0,type=explicit_settings"
     }
 
 
