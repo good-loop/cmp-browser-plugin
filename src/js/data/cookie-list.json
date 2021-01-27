@@ -1,0 +1,23 @@
+{
+    "www.rightmove.co.uk": {
+        "OptanonAlertBoxClosed": "true",
+        "OptanonConsent": "isIABGlobal=false&version=5.11.0&landingPath=NotLandingPage&groups=1:1,3:0,4:0&AwaitingReconsent=false"
+    },
+
+    "www.gov.uk": {
+        "cookies_preferences_set": true
+    },
+
+    "www.nhs.uk": {
+        "nhsuk-cookie-consent": {
+            "necessary":true,
+            "preferences":false,
+            "statistics":false,
+            "marketing":false,
+            "consented":true,
+            "version":3
+        }
+    }
+
+
+}
