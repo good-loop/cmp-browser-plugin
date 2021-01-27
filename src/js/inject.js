@@ -5,13 +5,13 @@ import * as cmpstub from './lib/stub.js';
 import {CmpApi} from './lib/CmpApi.js';
 //import * as cmpstub from '@iabtcf/stub';
 //import {CmpApi} from '@iabtcf/cmpapi';
-//import {Cookies} from 'js-cookie';
+
 const Cookies = require('js-cookie');
-console.log(Cookies.get());
-var time = new Date().toISOString()
-console.log(time);
-Cookies.set('OptanonAlertBoxClosed', time);
-console.log("After: " + Cookies.get());
+const cookielist = require('./data/cookie-list.json');
+const cookiesNeeded = cookielist[window.location.host];
+Object.keys(cookiesNeeded).forEach(function(key) {
+  Cookies.set(key, cookiesNeeded[key]);
+})
 
 console.log("HELLO FROM inject.js", document);
 
