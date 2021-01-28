@@ -1,7 +1,7 @@
 import { WebExtensionBlocker } from '@cliqz/adblocker-webextension';
 import { browser } from 'webextension-polyfill-ts';
 
-async function blockCookie() {
+async function blockCookiePopup() {
     const blocker = await WebExtensionBlocker.fromLists(fetch, [
         'https://www.fanboy.co.nz/fanboy-cookiemonster.txt'
     ]);
@@ -9,7 +9,7 @@ async function blockCookie() {
     console.log("Blocker enabled");
 };
 
-blockCookie();
+blockCookiePopup();
 
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == 'install') {

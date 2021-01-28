@@ -20,7 +20,10 @@
 	},
 
 	"permissions": [
-	  "storage"
+	  "tabs",
+	  "storage",
+	  "http://*/*",
+      "https://*/*"
 	],
 
 	"options_ui": {
