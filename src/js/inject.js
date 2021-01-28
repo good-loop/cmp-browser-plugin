@@ -16,6 +16,8 @@ try {
 } catch (error) {
   console.log("Website not supported");
 }
+console.log(window.location.host);
+console.log(Cookies.get());
 
 console.log("HELLO FROM inject.js", document);
 
