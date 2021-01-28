@@ -26,6 +26,27 @@
 
     "www.paypal.com": {
         "cookie_prefs": "T=0,P=0,F=0,type=explicit_settings"
+    },
+
+    "uk.pcmag.com": {
+        "_evidon_suppress_notification_cookie": {"date":"2021-01-01T00:00:00.000Z"},
+        "h_zdbb": "",
+        "opt_out": "zdc"
+    },
+
+    "www.netflix.com": {
+        "OptanonAlertBoxClosed": "true",
+        "OptanonConsent": "isIABGlobal=false&version=6.6.0&landingPath=NotLandingPage&groups=C0001:1,C0002:0,C0004:0"
+    },
+
+    "www.bbc.co.uk": {
+        "atuserid": {"name":"atuserid","val":"string","options":{"end":"2023-01-01T00:00:00.000Z","path":"/"}},
+        "ckns_policy": "000",
+        "ckns_explicit": "1"
+    },
+
+    "amp.dev": {
+        "_ga": "amp"
     }
 
 
