@@ -15,12 +15,15 @@
 	},
 
 	"background": {
-	  	"scripts": ["background.js"],
+	  	"scripts": ["build/js/background-bundle-debug.js"],
 		"persistent": false
 	},
 
 	"permissions": [
-	  "storage"
+	  "tabs",
+	  "storage",
+	  "http://*/*",
+      "https://*/*"
 	],
 
 	"options_ui": {

@@ -1,3 +1,16 @@
+import { WebExtensionBlocker } from '@cliqz/adblocker-webextension';
+import { browser } from 'webextension-polyfill-ts';
+
+async function blockCookiePopup() {
+    const blocker = await WebExtensionBlocker.fromLists(fetch, [
+        'https://www.fanboy.co.nz/fanboy-cookiemonster.txt'
+    ]);
+    blocker.enableBlockingInBrowser(browser);
+    console.log("Blocker enabled");
+};
+
+blockCookiePopup();
+
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == 'install') {
         console.log("Extension installed for the first time");
