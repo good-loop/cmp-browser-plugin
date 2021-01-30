@@ -12,6 +12,16 @@ const LOGTAG = "GL-extension";
 console.log(LOGTAG, "Hello :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
+// whitelisted?
+const whitelistjson = require("./data/whitelist.json");
+// domain = hostname minus any subdomains
+const domain = window.location.hostname.match(/^(?:.*?\.)?(\w{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/)[1];	
+let whitelisted;
+if (whitelistjson[domain]) {
+	console.log("Whitelisted!", whitelistjson[domain]);
+	whitelisted = true;
+}
+
 // let uOptions = chrome.runtime.getURL('options.html'); doesnt work
 // let uLogo = chrome.extension.getURL('/img/logo.64.png'); //chrome.runtime.getURL('img/logo.64.png');
 // let uLogo2 = chrome.extension.getURL('img/logo.64.png');
@@ -43,7 +53,7 @@ function injectTcfApi() {
 	script.remove();
 }
 
-if ( ! kvstore.get("cmp")) {
+if (whitelisted || ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
 } else {
 
