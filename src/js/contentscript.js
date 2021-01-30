@@ -12,7 +12,8 @@ const LOGTAG = "GL-extension";
 console.log(LOGTAG, "Hello :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
-// whitelisted?
+// whitelisted? 
+// TODO periodically update this (and other data lists) from a webserver
 const whitelistjson = require("./data/whitelist.json");
 // domain = hostname minus any subdomains
 const domain = window.location.hostname.match(/^(?:.*?\.)?(\w{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/)[1];	
