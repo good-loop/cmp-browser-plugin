@@ -18,8 +18,16 @@ console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 // whitelisted? 
 // TODO periodically update this (and other data lists) from a webserver
 const whitelistjson = require("./data/whitelist.json");
-// domain = hostname minus any subdomains
-const domain = window.location.hostname.match(/^(?:.*?\.)?(\w{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/)[1];	
+/** domain = hostname minus any subdomains  */
+const getDomain = () => {
+	let m = window.location.hostname.match(/^(?:.*?\.)?([a-zA-Z0-9\-_]{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/);
+	if ( ! m) {	// safety / paranoia
+		console.error("getDomain() error for "+window.location.hostname);
+		return window.location.hostname;
+	}
+	return m[1];
+};
+const domain = getDomain();	
 let whitelisted;
 if (whitelistjson[domain]) {
 	console.log("Whitelisted!", whitelistjson[domain]);
