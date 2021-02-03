@@ -4,7 +4,7 @@ import { browser } from 'webextension-polyfill-ts';
 async function blockCookiePopup() {
     const blocker = await WebExtensionBlocker.fromLists(fetch, [
         'https://www.fanboy.co.nz/fanboy-cookiemonster.txt'
-    ]);
+    ],{loadNetworkFilters: false});
     blocker.enableBlockingInBrowser(browser);
     console.log("Blocker enabled");
 };
