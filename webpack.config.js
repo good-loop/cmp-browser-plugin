@@ -12,7 +12,7 @@ const webDir = process.env.OUTPUT_WEB_DIR || 'extension';
 
 const baseConfig = {
 	// NB When editing keep the "our code" entry point last in this list - makeConfig override depends on this position.
-	entry: ['@babel/polyfill', './src/js/contentscript.js'],
+	entry: ['./src/js/contentscript.js'],
 	output: {
 		path: path.resolve(__dirname, './' + webDir + '/build/'), // NB: this should include js and css outputs
 		// filename: is left undefined and filled in by makeConfig
