@@ -76,9 +76,13 @@ if (whitelisted || ! kvstore.get("cmp")) {
 		if (event.data.connection_setup) {
 			console.log("setting up connection");
 			chrome.storage.sync.get(['purposes'], function(result) {
-				var i;
-				for (i=0; i<10; i++) {
-				  if (result.purposes[i]) tcModel.purposeConsents.set(i+1);
+				try {
+					var i;
+					for (i=0; i<10; i++) {
+				  		if (result.purposes[i]) tcModel.purposeConsents.set(i+1);
+					}
+				} catch(error) {
+					console.log("Unable to fetch user's preference - default to reject all cookies");
 				}
 				encodedString = TCString.encode(tcModel);
 				console.log("Updated consent string: " + encodedString);
