@@ -15,9 +15,9 @@ injectCosmetics(window, true);
 console.log(LOGTAG, "Hello :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
-// whitelisted? 
+// allowlisted? 
 // TODO periodically update this (and other data lists) from a webserver
-const whitelistjson = require("./data/whitelist.json");
+const allowlistjson = require("./data/allowlist.json");
 /** domain = hostname minus any subdomains  */
 const getDomain = () => {
 	let m = window.location.hostname.match(/^(?:.*?\.)?([a-zA-Z0-9\-_]{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/);
@@ -28,10 +28,10 @@ const getDomain = () => {
 	return m[1];
 };
 const domain = getDomain();	
-let whitelisted;
-if (whitelistjson[domain]) {
-	console.log("Whitelisted!", whitelistjson[domain]);
-	whitelisted = true;
+let allowlisted;
+if (allowlistjson[domain]) {
+	console.log("Website allowed!", allowlistjson[domain]);
+	allowlisted = true;
 }
 
 // let uOptions = chrome.runtime.getURL('options.html'); doesnt work
@@ -65,7 +65,7 @@ function injectTcfApi() {
 	script.remove();
 }
 
-if (whitelisted || ! kvstore.get("cmp")) {
+if (allowlisted || ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
 } else {
 

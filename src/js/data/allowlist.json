@@ -1,6 +1,6 @@
 {
 	"comment": "For sites where we should NOT run, or should set lenient cookies",
-	"TODO": "We should allow for updating this -- e.g. periodically update from a server. Also for the user to whitelist sites.",
+	"TODO": "We should allow for updating this -- e.g. periodically update from a server. Also for the user to allow sites.",
 	"format": "domain: {off:boolean, comment:string}",
 
 	"youtube.com": {"off":true, "comment":"Bug. Can break the site. Console error 'Accessor properties are not allowed.'"},
