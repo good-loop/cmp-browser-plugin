@@ -27,7 +27,7 @@ console.log("HELLO FROM inject.js", document);
 // set up __tcfapi stub
 cmpstub();
 //constructor input arguments: cmpID, cmpVersion, serviceSpecific
-const cmpApi = new CmpApi(141, 4, true);
+const cmpApi = new CmpApi(365, 4, true);
 
 // obtain tcString from content script
 // MESSAGING CHANNEL ********************************
