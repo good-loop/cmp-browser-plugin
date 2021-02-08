@@ -47,6 +47,42 @@
 
     "amp.dev": {
         "_ga": "amp"
+    },
+
+    "www.thesun.co.uk": {
+        "nukt_sp_consent": "",
+        "_sp_v1_opt": "1:login|true:last_id|12:"
+    },
+
+    "consent.yahoo.com": {
+        "EuConsent": "CPBCUVCPBCUVCAOACCENBACgAAAAAAAAACiQAAAAAAAA",
+        "cmp": ""
+    },
+
+    "www.bing.com": {
+        "BCP": "AD=0&AL=0&SM=0",
+        "SRCHD": "AF=NOFORM",
+        "SRCHUSR": "DOB=20210203&T=1612353396000"
+    },
+
+    "ok.ru": {
+        "__cmpconsentx501": "CPBCcM8PBCcM8AfH1BENBLCgAAAAAAAAAAigGCQBACnAGfAVgAwQDBIAgBTgDPgKwAYIAAA",
+        "__cmpcpcx501": "____",
+        "__cmpcvcx501": "___U__"
+    },
+
+    "www.sky.com": {
+        "_sp_v1_opt": "1:login|true:last_id|12:"
+    },
+
+    "www.iabuk.com": {
+        "CookieControl": {
+            "necessaryCookies":[],
+            "optionalCookies":{"analytical":"revoked","marketing":"revoked"},
+            "statement":{"shown":true,"updated":"14/06/2018"},
+            "consentDate":1612356226723,
+            "consentExpiry":300,
+            "interactedWith":true}
     }
 
 
