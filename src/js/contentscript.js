@@ -69,9 +69,21 @@ if (allowlisted || ! kvstore.get("cmp")) {
 	console.warn("My CMP is OFF!");	
 } else {
 
-	// Setup My CMP
-	injectTcfApi();
-	
+	chrome.storage.sync.get([domain], function(result) {
+		try {
+			if (result[domain].off) {
+				console.log("Website allowed! Turning off CMP.");
+			} else {
+				// Setup My CMP
+				injectTcfApi();
+			}
+		} catch(error) {
+			console.log("default");
+			// Setup My CMP
+			injectTcfApi();
+		}
+	})
+
 	window.addEventListener("message", function(event) {
 		if (event.data.connection_setup) {
 			console.log("setting up connection");
