@@ -27,6 +27,8 @@ chrome.storage.local.get(['vendorlist', 'allowlist'], function(result){
 		var encodedString = TCString.encode(tcModel);
 		console.log("Encoded string in content script: " + encodedString);
 		injectTcfApi();
+
+		// send consent string to inject.js
 		window.addEventListener("message", function(event) {
 			if (event.data.connection_setup) {
 				console.log("setting up connection");
@@ -55,7 +57,7 @@ const getDomain = () => {
 };
 
 function injectTcfApi() {
-	// inject.js being injected as an extension
+	// inject.js being injected into the webpage
 	let script = document.createElement('script'); 
 	script.src = chrome.runtime.getURL('build/js/inject-bundle-debug.js');
 	(document.head||document.documentElement).appendChild(script);

@@ -3,12 +3,10 @@
  */
 import * as cmpstub from './lib/stub.js';
 import {CmpApi} from './lib/CmpApi.js';
-//import * as cmpstub from '@iabtcf/stub';
-//import {CmpApi} from '@iabtcf/cmpapi';
 
 // prevent instance of babel polyfill to be loaded twice
 global._babelPolyfill = false; 
-
+/*
 const Cookies = require('js-cookie');
 const cookielist = require('./data/cookie-list.json');
 const cookiesNeeded = cookielist[window.location.host];
@@ -20,7 +18,7 @@ try {
   console.log("Website not supported");
 }
 console.log(window.location.host);
-console.log(Cookies.get());
+console.log(Cookies.get());*/
 
 console.log("HELLO FROM inject.js", document);
 
