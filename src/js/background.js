@@ -15,22 +15,32 @@ chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason == 'install' || details.reason == 'update') {
         console.log("Extension installed for the first time");
         console.log("Setting all purposes consent as default false");
+        let currentDate = new Date();
+        let newDate = new Date(currentDate.setMonth(currentDate.getMonth()+2)); 
+        console.log(newDate);
         chrome.storage.sync.set({
             purposes: [false, false, false, false, false,
-                        false, false, false, false, false]
+                        false, false, false, false, false],
+            nextupdate: newDate.toISOString()
         });
         updateList();
-        // create an alarm which goes off every one week to update data lists
-        chrome.alarms.create("Periodic update datalist", {periodInMinutes: 10080});
     }
 }); 
 
-chrome.alarms.onAlarm.addListener(function(alarm) {
-    if (alarm.name == "Periodic update datalist") {
-        console.log("Got an alarm!", alarm);
-        updateList();
-    }
-});
+window.onload = checkUpdate();
+
+// update once every two months
+async function checkUpdate() {
+    chrome.storage.sync.get(['nextupdate'], function(result) {
+        let currentDate = new Date();
+        let updateDate = Date.parse(result.nextupdate);
+        if (currentDate > updateDate) {
+            let newDate = new Date(currentDate.setMonth(currentDate.getMonth()+2)); 
+            chrome.storage.sync.set({nextupdate: newDate.toISOString()});
+            updateList();
+        } // else do nothing
+    });
+}
 
 async function updateList() {
     const gvl = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/vendor-list.json');

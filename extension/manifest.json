@@ -22,7 +22,6 @@
 	"permissions": [
 	  "tabs",
 	  "storage",
-	  "alarms",
 	  "http://*/*",
       "https://*/*"
 	],
