@@ -21,3 +21,10 @@ chrome.runtime.onInstalled.addListener(function(details) {
         })
     }
 }); 
+
+async function updateList() {
+    const response = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/vendor-list.json');
+    const gvljson = await response.json();
+}
+
+updateList();
