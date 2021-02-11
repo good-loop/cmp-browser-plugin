@@ -33,9 +33,11 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 });
 
 async function updateList() {
-    const response = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/vendor-list.json');
-    const gvljson = await response.json();
-    chrome.storage.local.set({vendorlist: gvljson}, function(){
+    const gvl = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/vendor-list.json');
+    const gvljson = await gvl.json();
+    const allow = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/allowlist.json');
+    const allowlistjson = await allow.json();
+    chrome.storage.local.set({vendorlist: gvljson, allowlist:allowlistjson}, function(){
         console.log("Done updating!");
     });
 }
