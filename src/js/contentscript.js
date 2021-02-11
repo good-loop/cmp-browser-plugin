@@ -42,7 +42,7 @@ if (allowlistjson[domain]) {
 const gvl = new GVL(gvljson);
 // create a new TC string
 const tcModel = new TCModel(gvl);
-tcModel.cmpId = 141;
+tcModel.cmpId = 365;
 tcModel.cmpVersion = 4;
 tcModel.isServiceSpecific = true;
 var encodedString = TCString.encode(tcModel);
