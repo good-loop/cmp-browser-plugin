@@ -12,20 +12,24 @@ function save_preference() {
         var temp = new URL(tab[0].url);
         var domain = getDomain(temp.hostname);
         const allowed = !(document.getElementById('toggler').checked);
-        if (allowed) {
-            chrome.storage.sync.set({
-                [domain]: {"off":true}
-            }, function() {
-                console.log("Turned off cmp for this website");
-                console.log(domain);
-            })
-        } else {
-            try {
-                chrome.storage.sync.remove(domain);
-            } catch (error) {
-                console.log(error);
+        chrome.storage.local.get(['allowlist'], function(data){
+            let allowlistjson = data.allowlist;
+            if (allowed) {
+                allowlistjson[domain] = {"off": true};
+                console.log("Turned off cmp for " + domain);
+                console.log(allowlistjson);
+            } else {
+                try {
+                    delete allowlistjson[domain];
+                    console.log("Turned on cmp for " + allowlistjson);
+                } catch (error) {
+                    console.log("Cmp already turned on.");
+                }
             }
-        }
+            chrome.storage.local.set({allowlist:allowlistjson}, function(){
+                console.log("Updated cmp for " + domain);
+            });
+        })
     });
 }
 
@@ -34,13 +38,12 @@ function load_preference() {
         var temp = new URL(tab[0].url);
         var domain = getDomain(temp.hostname);
         console.log(domain);
-        chrome.storage.sync.get([domain], function(result) {
-            console.log(result);
-            try {
-                if (result[domain].off) {
-                    document.getElementById('toggler').checked = false;
-                }
-            } catch(error) {
+        chrome.storage.local.get(['allowlist'], function(result) {
+            let allowlistjson = result.allowlist;
+            console.log(allowlistjson);
+            if (allowlistjson[domain]) {
+                document.getElementById('toggler').checked = false;
+            } else {
                 console.log("default");
             }
         })
