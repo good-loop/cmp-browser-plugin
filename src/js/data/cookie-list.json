@@ -1,14 +1,14 @@
 {
-    "www.rightmove.co.uk": {
+    "rightmove.co.uk": {
         "OptanonAlertBoxClosed": "true",
         "OptanonConsent": "isIABGlobal=false&version=5.11.0&landingPath=NotLandingPage&groups=1:1,3:0,4:0&AwaitingReconsent=false"
     },
 
-    "www.gov.uk": {
+    "gov.uk": {
         "cookies_preferences_set": true
     },
 
-    "www.nhs.uk": {
+    "nhs.uk": {
         "nhsuk-cookie-consent": {
             "necessary":true,
             "preferences":false,
@@ -19,27 +19,27 @@
         }
     },
 
-    "uk.indeed.com": {
+    "indeed.com": {
         "OptanonAlertBoxClosed": "true",
         "OptanonConsent": "isIABGlobal=false&version=6.6.0&landingPath=NotLandingPage&groups=C0001:1,C0002:0,C0003:0,C0004:0&AwaitingReconsent=false"
     },
 
-    "www.paypal.com": {
+    "paypal.com": {
         "cookie_prefs": "T=0,P=0,F=0,type=explicit_settings"
     },
 
-    "uk.pcmag.com": {
+    "pcmag.com": {
         "_evidon_suppress_notification_cookie": {"date":"2021-01-01T00:00:00.000Z"},
         "h_zdbb": "",
         "opt_out": "zdc"
     },
 
-    "www.netflix.com": {
+    "netflix.com": {
         "OptanonAlertBoxClosed": "true",
         "OptanonConsent": "isIABGlobal=false&version=6.6.0&landingPath=NotLandingPage&groups=C0001:1,C0002:0,C0004:0"
     },
 
-    "www.bbc.co.uk": {
+    "bbc.co.uk": {
         "atuserid": {"name":"atuserid","val":"string","options":{"end":"2023-01-01T00:00:00.000Z","path":"/"}},
         "ckns_policy": "000",
         "ckns_explicit": "1"
@@ -49,7 +49,7 @@
         "_ga": "amp"
     },
 
-    "www.thesun.co.uk": {
+    "thesun.co.uk": {
         "nukt_sp_consent": "",
         "_sp_v1_opt": "1:login|true:last_id|12:"
     },
@@ -59,7 +59,7 @@
         "cmp": ""
     },
 
-    "www.bing.com": {
+    "bing.com": {
         "BCP": "AD=0&AL=0&SM=0",
         "SRCHD": "AF=NOFORM",
         "SRCHUSR": "DOB=20210203&T=1612353396000"
@@ -71,11 +71,11 @@
         "__cmpcvcx501": "___U__"
     },
 
-    "www.sky.com": {
+    "sky.com": {
         "_sp_v1_opt": "1:login|true:last_id|12:"
     },
 
-    "www.iabuk.com": {
+    "iabuk.com": {
         "CookieControl": {
             "necessaryCookies":[],
             "optionalCookies":{"analytical":"revoked","marketing":"revoked"},
