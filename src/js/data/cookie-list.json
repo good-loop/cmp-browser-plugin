@@ -83,6 +83,10 @@
             "consentDate":1612356226723,
             "consentExpiry":300,
             "interactedWith":true}
+    },
+
+    "businessinsider.com": {
+        "euconsent-v2": "CPBwkPQPBwkPQAGABBENBNCgAAAAAELAAAwIAAAGBgCgAVABoALkAuoBgQAA.YAAAAAAAAAAA"
     }
 
 
