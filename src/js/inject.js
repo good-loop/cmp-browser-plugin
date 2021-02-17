@@ -6,19 +6,6 @@ import {CmpApi} from './lib/CmpApi.js';
 
 // prevent instance of babel polyfill to be loaded twice
 global._babelPolyfill = false; 
-/*
-const Cookies = require('js-cookie');
-const cookielist = require('./data/cookie-list.json');
-const cookiesNeeded = cookielist[window.location.host];
-try {
-  Object.keys(cookiesNeeded).forEach(function(key) {
-    Cookies.set(key, cookiesNeeded[key]);
-  })
-} catch (error) {
-  console.log("Website not supported");
-}
-console.log(window.location.host);
-console.log(Cookies.get());*/
 
 console.log("HELLO FROM inject.js", document);
 

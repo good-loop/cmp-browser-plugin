@@ -4,6 +4,7 @@ import {TCModel, TCString, GVL} from '@iabtcf/core';
 // import {addScript} from './base/utils/miscutils';
 // import $ from 'jquery';
 // import _ from 'lodash';
+const Cookies = require('js-cookie');
 
 const LOGTAG = "GL-extension";
 console.log(LOGTAG, "Hello :)", window, document);
@@ -11,6 +12,17 @@ console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
 import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';
 injectCosmetics(window, true);
+
+const getDomain = () => {
+	let m = window.location.hostname.match(/^(?:.*?\.)?([a-zA-Z0-9\-_]{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/);
+	if ( ! m) {	// safety / paranoia
+		console.error("getDomain() error for "+window.location.hostname);
+		return window.location.hostname;
+	}
+	return m[1];
+};
+
+rejectCookie();
 
 chrome.storage.local.get(['vendorlist', 'allowlist', 'userlist'], function(result){
 	const domain = getDomain();
@@ -47,19 +59,22 @@ chrome.storage.local.get(['vendorlist', 'allowlist', 'userlist'], function(resul
 	}
 })
 
-const getDomain = () => {
-	let m = window.location.hostname.match(/^(?:.*?\.)?([a-zA-Z0-9\-_]{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/);
-	if ( ! m) {	// safety / paranoia
-		console.error("getDomain() error for "+window.location.hostname);
-		return window.location.hostname;
-	}
-	return m[1];
-};
-
 function injectTcfApi() {
 	// inject.js being injected into the webpage
 	let script = document.createElement('script'); 
 	script.src = chrome.runtime.getURL('build/js/inject-bundle-debug.js');
 	(document.head||document.documentElement).appendChild(script);
 	script.remove();
+}
+
+async function rejectCookie() {
+	const domain = getDomain();
+	const cookielist = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/feature/feb-2021/dynamic-datalist-load/src/js/data/cookie-list.json');
+	const cookielistjson = await cookielist.json();
+	if (cookielistjson[domain]) {
+		const cookiesNeeded = cookielistjson[domain];
+		Object.keys(cookiesNeeded).forEach(function(key) {
+    		Cookies.set(key, cookiesNeeded[key]);
+  		})
+	}
 }
