@@ -12,21 +12,21 @@ function save_preference() {
         var temp = new URL(tab[0].url);
         var domain = getDomain(temp.hostname);
         const allowed = !(document.getElementById('toggler').checked);
-        chrome.storage.local.get(['allowlist'], function(data){
-            let allowlistjson = data.allowlist;
+        chrome.storage.local.get(['userlist'], function(data){
+            let userlistjson = data.userlist;
             if (allowed) {
-                allowlistjson[domain] = {"off": true};
+                userlistjson[domain] = {"off": true};
                 console.log("Turned off cmp for " + domain);
-                console.log(allowlistjson);
+                console.log(userlistjson);
             } else {
                 try {
-                    delete allowlistjson[domain];
-                    console.log("Turned on cmp for " + allowlistjson);
+                    delete userlistjson[domain];
+                    console.log("Turned on cmp for " + userlistjson);
                 } catch (error) {
                     console.log("Cmp already turned on.");
                 }
             }
-            chrome.storage.local.set({allowlist:allowlistjson}, function(){
+            chrome.storage.local.set({userlist:userlistjson}, function(){
                 console.log("Updated cmp for " + domain);
             });
         })
@@ -38,10 +38,10 @@ function load_preference() {
         var temp = new URL(tab[0].url);
         var domain = getDomain(temp.hostname);
         console.log(domain);
-        chrome.storage.local.get(['allowlist'], function(result) {
-            let allowlistjson = result.allowlist;
-            console.log(allowlistjson);
-            if (allowlistjson[domain]) {
+        chrome.storage.local.get(['userlist'], function(result) {
+            let userlistjson = result.userlist;
+            console.log(userlistjson);
+            if (userlistjson[domain]) {
                 document.getElementById('toggler').checked = false;
             } else {
                 console.log("default");

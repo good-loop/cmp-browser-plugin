@@ -12,9 +12,9 @@ console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';
 injectCosmetics(window, true);
 
-chrome.storage.local.get(['vendorlist', 'allowlist'], function(result){
+chrome.storage.local.get(['vendorlist', 'allowlist', 'userlist'], function(result){
 	const domain = getDomain();
-	if (result.allowlist[domain] || !kvstore.get("cmp")) {
+	if (result.userlist[domain] || result.allowlist[domain] || !kvstore.get("cmp")) {
 		console.log("Website allowed! CMP turned off.");
 	} else { // set up our CMP
 		// set up GVL vendor list

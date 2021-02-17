@@ -23,6 +23,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
                         false, false, false, false, false],
             nextupdate: newDate.toISOString()
         });
+        chrome.storage.local.set({
+            userlist: {"Description": "For users to allow sites"}
+        });
         updateList();
     }
 }); 
