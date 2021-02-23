@@ -27,7 +27,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
             userlist: {"Description": "For users to allow sites"}
         });
         updateList();
-        const url = chrome.extension.getURL('install.html');
+        const url = chrome.extension.getURL('install-page1.html');
         chrome.tabs.create({'url':url});
     }
 }); 
