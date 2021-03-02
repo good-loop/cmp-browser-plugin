@@ -87,6 +87,11 @@
 
     "businessinsider.com": {
         "euconsent-v2": "CPBwkPQPBwkPQAGABBENBNCgAAAAAELAAAwIAAAGBgCgAVABoALkAuoBgQAA.YAAAAAAAAAAA"
+    },
+
+
+    "omio.co.uk": {
+        "gdpr": {"categories":["infrastructure","corefunctionalities","security"],"time":1614726397249,"version":1,"isAllAccepted":false}
     }
 
 
