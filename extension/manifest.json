@@ -14,18 +14,31 @@
 	"chrome_url_overrides" : {
 	},
 
-	"optional_permissions": [
-	  "storage"
+	"background": {
+	  	"scripts": ["build/js/background-bundle-debug.js"],
+		"persistent": false
+	},
+
+	"permissions": [
+	  "tabs",
+	  "storage",
+	  "http://*/*",
+      "https://*/*"
 	],
 
 	"options_ui": {
 		"page": "options.html",
-		"open_in_tab": false
+		"open_in_tab": true
+	},
+
+	"browser_action": {
+		"default_popup": "popup.html"
 	},
 
 	"content_scripts": [		
 		{			
 			"matches": ["<all_urls>"],
+			"run_at": "document_start",
 			"exclude_matches": ["*://as.good-loop.com/*","*://my.good-loop.com/*","*://good-loop.com/*"],
 			"js": ["build/js/contentscript-bundle-debug.js"]
 		}

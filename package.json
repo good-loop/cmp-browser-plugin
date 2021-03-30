@@ -2,13 +2,18 @@
   "name": "G-L_Project_NPM_Skeleton",
   "version": "0.0.6",
   "description": "My app",
-  "author": "Daniel Winterstein",
+  "author": "Kai, Daniel Winterstein",
   "repository": {
     "url": "https://github.com/good-loop/good-loop-chrome-extension",
     "type": "git"
   },
   "license": "MIT",
   "dependencies": {
+    "@cliqz/adblocker-webextension": "^1.20.0",
+    "@cliqz/adblocker-webextension-cosmetics": "^1.20.0",
+    "@iabtcf/cmpapi": "^1.1.4",
+    "@iabtcf/core": "^1.1.4",
+    "@iabtcf/stub": "^1.1.4",
     "easy-enums": "^1.1.7",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
@@ -19,7 +24,9 @@
     "react-dom": "^16.13.1",
     "react-spring": "^8.0.27",
     "reactstrap": "^8.4.1",
-    "sjtest": "^0.4.9"
+    "sjtest": "^0.4.9",
+    "webextension-polyfill-ts": "^0.22.0",
+    "you-again": "^0.8.9"
   },
   "scripts": {
     "compile": "webpack --config $PWD/webpack.config.js --progress --colors",

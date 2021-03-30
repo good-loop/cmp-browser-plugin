@@ -1,7 +1,105 @@
+<!DOCTYPE html>
 <html>
-<body>
+  <head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+	<style>
+		html {
+		  background-image: url('img/sky.png');
+		  background-size: cover;
+		  background-repeat: no-repeat;
+		  height: 100%;
+		}
+  
+		.center {
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  transform: translate(-50%, -50%);
+		}
 
-	??
+		.center h1 {
+          text-align: center;
+          color: #ffffff;
+          font-family:'Montserrat',sans-serif;
+          font-weight:700;
+          font-size:250%;
+        }
+  
+		#box {
+		  width:500px;
+		  height:300px;
+		  margin:10px;
+		  padding:10px;
+		  background: #ffffff;;
+		  border-radius: 25px;
+		}
 
-</body>
+		#box label {
+          font-family:'Montserrat',sans-serif;
+          font-size:150%;
+		  font-weight:300;
+        }
+
+		button {
+          position:absolute;
+          bottom: 30px;
+          right: 30px;
+        }
+	  </style>
+  </head>
+  <body id="body">
+	<div id="logo">
+		<img src="img/cookiemanagerlogo.png" style="width:200px;height:150px;">
+	</div>
+	<div class="center">
+		<h1>Manage Consent Settings</h1>
+		<div id="box">
+			<br>
+			<label>
+				<input type="checkbox" id="purpose1">
+				Store and access information on device
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose2">
+				Show basic ads
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose3">
+				Create a personalised ads profile
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose4">
+				Show personalised ads
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose5">
+				Create a personalised content profile
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose6">
+				Show personalised content
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose7">
+				Measure ad performance
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose8">
+				Measure content performance
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose9">
+				Apply market research to generate audience insights
+			</label><br>
+			<label>
+				<input type="checkbox" id="purpose10">
+				Use your data to develop and improve products 
+			</label><br>
+			<br>
+			<div id="status"></div><br>
+			<button id="save">Save</button>
+		</div>
+	</div> 
+  </body>
+  <script src="./options.js"></script>
 </html>
