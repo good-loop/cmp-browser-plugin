@@ -3,7 +3,7 @@ import { browser } from 'webextension-polyfill-ts';
 
 async function blockCookiePopup() {
     const blocker = await WebExtensionBlocker.fromLists(fetch, [
-        'https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/fanboy-cookiemonster.txt'
+        'https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/master/src/js/data/fanboy-cookiemonster.txt'
     ],{loadNetworkFilters: false});
     blocker.enableBlockingInBrowser(browser);
     console.log("Blocker enabled");
@@ -48,9 +48,9 @@ async function checkUpdate() {
 }
 
 async function updateList() {
-    const gvl = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/vendor-list.json');
+    const gvl = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/master/src/js/data/vendor-list.json');
     const gvljson = await gvl.json();
-    const allow = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/allowlist.json');
+    const allow = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/master/src/js/data/allowlist.json');
     const allowlistjson = await allow.json();
     chrome.storage.local.set({vendorlist: gvljson, allowlist:allowlistjson}, function(){
         console.log("Done updating!");

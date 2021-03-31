@@ -69,7 +69,7 @@ function injectTcfApi() {
 
 async function rejectCookie() {
 	const domain = getDomain();
-	const cookielist = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/develop/src/js/data/cookie-list.json');
+	const cookielist = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/master/src/js/data/cookie-list.json');
 	const cookielistjson = await cookielist.json();
 	if (cookielistjson[domain]) {
 		const cookiesNeeded = cookielistjson[domain];
