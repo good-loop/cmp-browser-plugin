@@ -6,7 +6,7 @@ guardian," https://www.theguardian.com/uk"," yes"," branch:develop"," cookie pop
 scotsman," https://www.scotsman.com/"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,,
 the sun," https://www.thesun.co.uk/"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,,
 the sun," https://www.thesun.co.uk/"," no"," branch:master"," cookie popup"," cookie popup"," 14/01/2021",,
-"the daily mail "," https://www.dailymail.co.uk/home/index.html"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,,
+"the daily mail","https://www.dailymail.co.uk/home/index.html"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,,
 pcmag," https://uk.pcmag.com/"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021," Evidon"," Uses __cmp"
 the hacker news," https://thehackernews.com/"," yes"," branch:develop"," cookie popup"," No popup. CMP connects successfully",03/02/2021,,
 telegraph news," https://www.telegraph.co.uk/"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,,
@@ -34,6 +34,7 @@ imdb," https://www.imdb.com/"," yes"," branch:develop"," no popup",No popup. CMP
 geeksforgeeks," https://www.geeksforgeeks.org/"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,,
 IAB UK," https://www.iabuk.com/events-training/virtual-networking-1"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021," Civic https://www.civicuk.com/cookie-control",
 nhs uk," https://www.nhs.uk/"," yes"," branch:develop"," cookie popup",No popup. CMP connects successfully,03/02/2021,," manually set cookie"
+Forbes,"https://www.forbes.com/sites/robertwood/2011/04/20/how-much-is-your-tax-deduction-worth/"
 "","","","","","","","",""
 "","","","","","","","",""
 "","","","","","","","",""
