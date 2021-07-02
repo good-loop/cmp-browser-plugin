@@ -10,6 +10,14 @@ const LOGTAG = "GL-extension";
 console.log(LOGTAG, "Hello :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
+// TODO whitelist
+try {	
+	Notification.requestPermission = () => Promise.resolve("default");
+	console.log(LOGTAG, "Notifications are blocked (response is always default=off)");
+} catch(err) {
+	console.warn(LOGTAG, err);
+}
+
 import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';
 injectCosmetics(window, true);
 
