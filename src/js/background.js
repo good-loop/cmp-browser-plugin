@@ -24,7 +24,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
             nextupdate: newDate.toISOString()
         });
         chrome.storage.local.set({
-            userlist: {"Description": "For users to allow sites"}
+            userlist: {"Description": "For users to allow sites"} // why provide this??
         });
         updateList();
         const url = chrome.extension.getURL('install-page1.html');

@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
  
-	"name": "Good-Loop: CMP",
+	"name": "Good-Loop: CMP - alpha",
 	"description": "It's called 'consent' - Shouldn't you be in control of it?",
-	"version": "0.1.0",
+	"version": "0.1.1",
 
 	"icons": {
 		"64": "img/logo.64.png"
@@ -32,6 +32,7 @@
 	},
 
 	"browser_action": {
+		"default_icon": "img/logo.64.png",
 		"default_popup": "popup.html"
 	},
 

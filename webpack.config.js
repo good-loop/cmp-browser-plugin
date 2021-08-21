@@ -88,9 +88,12 @@ const makeConfig = ({ filename, mode, entry }) => {
 };
 
 const configs = [
+	makeConfig({filename: 'js/background-bundle-debug.js', mode: 'development', entry:'./src/js/background.js'}),
 	makeConfig({filename: 'js/contentscript-bundle-debug.js', mode: 'development' }),
 	makeConfig({filename: 'js/inject-bundle-debug.js', mode: 'development', entry:'./src/js/inject.js'}),
-	makeConfig({filename: 'js/background-bundle-debug.js', mode: 'development', entry:'./src/js/background.js'}),
+	makeConfig({filename: 'js/install-bundle-debug.js', mode: 'development', entry:'./src/js/install.js'}),
+	makeConfig({filename: 'js/options-bundle-debug.js', mode: 'development', entry:'./src/js/options.js'}),
+	makeConfig({filename: 'js/popup-bundle-debug.js', mode: 'development', entry:'./src/js/popup.js'}),
 ];
 // Allow debug-only compilation for faster iteration in dev
 if (process.env.NO_PROD !== 'true') {

@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
 	<style>
 		html {
-		  background-image: url('img/sky.png');
-		  background-size: cover;
-		  background-repeat: no-repeat;
-		  height: 100%;
+			background-image: url('img/sky.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 100%;
 		}
-  
+
 		.center {
-		  position: absolute;
-		  left: 50%;
-		  top: 50%;
-		  transform: translate(-50%, -50%);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
 		}
 
 		.center h1 {
-          text-align: center;
-          color: #ffffff;
-          font-family:'Montserrat',sans-serif;
-          font-weight:700;
-          font-size:250%;
-        }
-  
+			text-align: center;
+			color: #ffffff;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 250%;
+		}
+
 		#box {
-		  width:500px;
-		  height:300px;
-		  margin:10px;
-		  padding:10px;
-		  background: #ffffff;;
-		  border-radius: 25px;
+			width: 500px;
+			margin: 10px;
+			padding: 10px;
+			background: #ffffff;
+			;
+			border-radius: 25px;
 		}
 
 		#box label {
-          font-family:'Montserrat',sans-serif;
-          font-size:150%;
-		  font-weight:300;
-        }
+			font-family: 'Montserrat', sans-serif;
+			font-size: 150%;
+			font-weight: 300;
+		}
 
-		button {
-          position:absolute;
-          bottom: 30px;
-          right: 30px;
-        }
-	  </style>
-  </head>
-  <body id="body">
+		/* BS button */
+		.btn {
+			display: inline-block;
+			font-weight: 400;
+			color: #212529;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background-color: transparent;
+			border: 1px solid transparent;
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			line-height: 1.5;
+			border-radius: .25rem;
+			transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		}
+		.btn-primary {
+			color: #fff;
+			background-color: #007bff;
+			border-color: #007bff;
+		}
+
+	</style>
+</head>
+
+<body id="body">
 	<div id="logo">
 		<img src="img/cookiemanagerlogo.png" style="width:200px;height:150px;">
 	</div>
@@ -93,13 +116,24 @@
 			</label><br>
 			<label>
 				<input type="checkbox" id="purpose10">
-				Use your data to develop and improve products 
+				Use your data to develop and improve products
 			</label><br>
 			<br>
 			<div id="status"></div><br>
-			<button id="save">Save</button>
+			<button class="btn btn-primary" id="save">Save</button>
+
+			<h3>Whitelisted Sites</h3>
+			<p>
+				These sites can use their own consent management, and can potentially send you notifications.
+			</p>
+			<ul id="whitelist">
+
+			</ul>
+			<label>Add a site to the whitelist</label>
+			<input id="addToWhitelist" />
 		</div>
-	</div> 
-  </body>
-  <script src="./options.js"></script>
+	</div>
+</body>
+<script src="build/js/options-bundle-debug.js"></script>
+
 </html>
