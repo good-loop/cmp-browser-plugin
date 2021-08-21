@@ -1,4 +1,5 @@
 import { getDomain } from "./base/utils/miscutils";
+import { saveOptions } from "./extension-utils";
 
 function save_preference() {
     chrome.tabs.query({active:true,currentWindow:true},function(tab){
@@ -19,9 +20,7 @@ function save_preference() {
                     console.log("Cmp already turned on.");
                 }
             }
-            chrome.storage.local.set({userlist:userlistjson}, function(){
-                console.log("Updated cmp for " + domain);
-            });
+			saveOptions({userlist:userlistjson});
         })
     });
 }

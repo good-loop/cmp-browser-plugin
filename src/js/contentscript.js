@@ -14,6 +14,7 @@ console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';
 injectCosmetics(window, true); // What does this do??
 
+// userlist is domain: {off:true} to whitelist domains
 // What are vendorlist and allowlist??
 chrome.storage.local.get(['vendorlist', 'allowlist', 'userlist'], function(result) {
 	console.log("CMP storage local load: ", result);
