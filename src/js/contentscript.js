@@ -12,7 +12,6 @@ console.log(LOGTAG, "Hello :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
 import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';
-injectCosmetics(window, true); // What does this do??
 
 // userlist is domain: {off:true} to whitelist domains
 // What are vendorlist and allowlist??
@@ -23,6 +22,10 @@ chrome.storage.local.get(['vendorlist', 'allowlist', 'userlist'], function(resul
 		console.log("Website allowed! CMP turned off.");
 		return;
 	}
+
+	// I think this uses a blacklist to switch off popups
+	// See https://github.com/cliqz-oss/adblocker/blob/master/packages/adblocker/README.md
+	injectCosmetics(window, true);
 
 	// custom CMP cookies??
 	setCMPCookies();

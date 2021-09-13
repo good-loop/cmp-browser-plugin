@@ -37,6 +37,9 @@
 		"isAnalyticsTargetingCookiesEnabled": false,
 		"cookieBannerNewClosed": true
 	},
+    "skyscanner.net": {
+        "gdpr": "information&adverts&version:::2"
+    },
     "netflix.com": {
         "OptanonAlertBoxClosed": "true",
         "OptanonConsent": "isIABGlobal=false&version=6.6.0&landingPath=NotLandingPage&groups=C0001:1,C0002:0,C0004:0"
