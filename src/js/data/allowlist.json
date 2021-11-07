@@ -1,8 +1,8 @@
 {
-	"comment": "For sites where we should NOT run, or should set lenient cookies",
-	"TODO": "We should allow for updating this -- e.g. periodically update from a server. Also for the user to allow sites.",
+	"comment": "For sites where we should NOT run, or should set lenient cookies. Gets an update from the server every month",
 	"format": "domain: {off:boolean, comment:string}",
 
-	"youtube.com": {"off":true, "comment":"Bug. Can break the site. Console error 'Accessor properties are not allowed.'"},
+	"instagram": {"off":true, "comment":"Custom consent code which can break use of the site."},
+	"youtube.com": {"off":true, "comment":"Bug. Can break use of the site. Console error 'Accessor properties are not allowed.'"},
 	"xero.com": {"off":true, "comment":"Bug. Breaks the dashboard. Console error about only one babel polyfill being allowed"}
 }

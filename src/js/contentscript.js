@@ -8,7 +8,7 @@ import {getDomain} from './base/utils/miscutils';
 const Cookies = require('js-cookie');
 
 const LOGTAG = "GL-extension";
-console.log(LOGTAG, "Hello :)", window, document);
+console.log(LOGTAG, "Hello from Cookie Cutter :)", window, document);
 console.log(LOGTAG, "CMP?", kvstore.get("cmp"));
 
 import { injectCosmetics } from '@cliqz/adblocker-webextension-cosmetics';

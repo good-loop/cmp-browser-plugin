@@ -34,13 +34,13 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 window.onload = checkUpdate();
 
-// update once every two months
+// update once every month
 async function checkUpdate() {
     chrome.storage.sync.get(['nextupdate'], function(result) {
         let currentDate = new Date();
         let updateDate = Date.parse(result.nextupdate);
         if (currentDate > updateDate) {
-            let newDate = new Date(currentDate.setMonth(currentDate.getMonth()+2)); 
+            let newDate = new Date(currentDate.setMonth(currentDate.getMonth()+1)); 
             chrome.storage.sync.set({nextupdate: newDate.toISOString()});
             updateList();
         } // else do nothing
