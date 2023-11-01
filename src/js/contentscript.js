@@ -86,6 +86,7 @@ function injectTcfApi() {
  * If the site is on our list, then set custom cookies to make its CMP happy
  */
 async function setCMPCookies() {	
+	console.log("CMP setCMPCookies...");
 	const domain = getDomain();
 	// format?? domain > cookie > value
 	const cookielist = await fetch('https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/master/src/js/data/cookie-list.json');

@@ -2,7 +2,8 @@ import { WebExtensionBlocker } from '@cliqz/adblocker-webextension';
 import { browser } from 'webextension-polyfill-ts';
 
 async function blockCookiePopup() {
-    const blocker = await WebExtensionBlocker.fromLists(fetch, [
+    console.log("blockCookiePopup...");
+	const blocker = await WebExtensionBlocker.fromLists(fetch, [
         'https://raw.githubusercontent.com/good-loop/cmp-browser-plugin/master/src/js/data/fanboy-cookiemonster.txt'
     ],{loadNetworkFilters: false});
     blocker.enableBlockingInBrowser(browser);

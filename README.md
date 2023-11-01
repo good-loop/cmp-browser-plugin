@@ -16,6 +16,15 @@ Publish here: https://chrome.google.com/webstore/devconsole/
 
 ## Future Work
 
+How to flag failures and efficiently patch them?
+
+Is the adblocker up to date? 
+
+Test with Playwright?
+https://playwright.dev/docs/chrome-extensions#headless-mode
+
+Mobile app browser
+
 Cross-browser - see: 
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension
