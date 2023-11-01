@@ -28,3 +28,5 @@ Mobile app browser
 Cross-browser - see: 
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension
+
+domain=the-race.com, mb=3.1719112396240234, mbmbl=3.2352280616760254, ads=6, adsmbl=6, mbperad=0.5286518732706706, mbperadmbl=0.5392046769460042, mbperadsd=2.683003742684975E-4, mbperadmblsd=3.679593446040278E-5, ssps=85, co2pm=0.512974012648632
